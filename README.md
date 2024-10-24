@@ -252,4 +252,3 @@ I finished up the section by answering the questions about SYN scans:<br />
   <img src="" height="80%" width="80%" alt="image five"/>
 </p>
 
-<img width="1270" alt="Screenshot 2024-10-24 at 8 08 31 PM" src="">
