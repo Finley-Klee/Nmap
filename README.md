@@ -145,26 +145,23 @@ Compared to TCP and SYN scans, UDP scans are quite slow, so it is recommended to
   <img src="https://github.com/user-attachments/assets/363ee448-eb4c-4eb8-be4a-56223c271c1b" height="80%" width="80%" alt="white background with the question in black font and the answer below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The question reads What optional argument can the ftp-anon.nse script take? and the answer is maxlist."/>
 </p>
 - <b>NSE Scripts: Searching for Scripts</b>
-<p>Description</p>
+<p>To round out the discussion of NSE, this section teaches how to search for scripts and install new scripts to your attacking machine.</p>
 <br>
-<p align="center">Step One: <br/>
-  <img src="" height="80%" width="80%" alt="image one"/>
+<p align="center">You can search for scripts either by searching the nmap website, or by searching through the locally stored scripts which are found in /usr/share/nmap/scripts<br/>
+  <br />
+ There are a few different methods to search through the scripts file. You can use grep with the search term, for example to search for scripts that contain "ftp" you could use grep "ftp" /usr/share/nmap/scripts/script.db and below is a screenshot of the output:<br />
+  <img src="https://github.com/user-attachments/assets/c74086d5-27e0-4177-90a9-a2f0d1a4ea2f" height="80%" width="80%" alt="a white background with mostly black text. The first line has the username muri@augury in red and the file location /usr/share/nmap/scripts in blue followed by the command in black grep ftp /usr/share/nmap/scripts/script.db. The following 9 lines all show scripts that contain ftp in the file name, for example ftp-anon.nse."/>
   <br />
   <br />
-  Step Two: <br />
-  <img src="" height="80%" width="80%" alt="image two"/>
-  <br />
-  <br />
-  Step Three: <br />
-  <img src="" height="80%" width="80%" alt="image three"/>
+Another way to search is by using wildcard asterisks on either side of the search term in the file path of an ls -l command like this:<br />
+  <img src="https://github.com/user-attachments/assets/ab4edf8a-0e75-4485-8a25-2488178612a4" height="80%" width="80%" alt="a white background with mostly black text. The first line has the username muri@augury in red and the file location /usr/share/nmap/scripts in blue followed by the command in black ls -l /usr/share/nmap/scripts/*tfp* the following 9 lines list the individual script files that contain ftp in the name."/>
    <br />
   <br />
-  Step Four: <br />
-  <img src="" height="80%" width="80%" alt="image four"/>
+  To download scripts, you should be able to get any missing scripts by running an nmap update, however you can also download scripts manually using the sudo wget -O /usr/share/nmap/scripts/<script-name>.nse https://svn.nmap.org/nmap/scripts/<script-name>.nse command. This must be followed by running the nmap --script-updatedb command.
    <br />
   <br />
-  Step Five: <br />
-  <img src="" height="80%" width="80%" alt="image five"/>
+ Finally, I checked my NSE knowledge by answering the section questions:<br />
+  <img src="https://github.com/user-attachments/assets/27ff1841-0608-4d9f-a2f8-9ae7bd52f5ef" height="80%" width="80%" alt="white background with the questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The first question reads Search for smb scripts in the /usr/share/nmap/scripts/ directory using either of the demonstrated methods. What is the filename of the script which determines the underlying OS of the SMB server? and the answer is smb-os-discovery.nse. The second question reads Read through this script. What does it depend on? and the answer is smb-brute."/>
 </p>
 - <b>Firewall Evasion</b>
 <p>Description</p>
