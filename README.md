@@ -86,26 +86,26 @@ Compared to TCP and SYN scans, UDP scans are quite slow, so it is recommended to
   <img src="https://github.com/user-attachments/assets/f494e035-823a-4689-ac33-e938c83db1bc" height="80%" width="80%" alt="white background with questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The first questions asks If a UDP port doesn't respond to an Nmap scan, what will it be marked as? The answer is open|filtered. The second question asks When a UDP port is closed, by convention the target should send back a port unreachable message. Which protocol would it use to do so? The answer is ICMP."/>
 </p>
 - <b>Scan Types: NULL, FIN and XMAS</b>
-<p>Description</p>
+<p>In this section I learned about three less common, but even more stealthy scan options: the NULL scan, the FIN scan, and the XMAS scan.</p>
 <br>
-<p align="center">Step One: <br/>
-  <img src="" height="80%" width="80%" alt="image one"/>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6a97874c-83cf-48b1-80bd-cd8618250645" height="80%" width="80%" alt="black text on a white background that reads as the name suggests, NULL scans (-sN) are when the TCP request is sent with no flags at all. As per the RFC, the target host should respond with a RST if the port is closed. Below the text is a screenshot from wireshark showing two packets. The first is the null TCP packet with a blue background and the second is the RST packet with a red background. Below those lines is a deeper inspection of the null packet where you can see zeros in all of the flag lines."/>
   <br />
   <br />
-  Step Two: <br />
-  <img src="" height="80%" width="80%" alt="image two"/>
+  <img src="https://github.com/user-attachments/assets/66dfb70b-4b44-4bb2-958d-164c32849148" height="80%" width="80%" alt="black text on a white background that reads FIN scans (-sF) work in an almost identical fashion; however, instead of sending a completely empty packet, a request is sent with the FIN flag (usually used to gracefully close an active connection). Once again, Nmap expects a RST if the port is closed. Below the text is a screenshot from wireshark showing two packets. The first is the FIN packet with a blue background and the second is the RST packet with a red background. Below those lines is a deeper inspection of the FIN packet where you can see a 1 in the last line indicating that the FIN flag is set."/>
   <br />
   <br />
-  Step Three: <br />
-  <img src="" height="80%" width="80%" alt="image three"/>
+  <img src="https://github.com/user-attachments/assets/4aabc4c9-b625-43ff-904e-5f266ee1e3f9" height="80%" width="80%" alt="black text on a white background that reads As with the other two scans in this class, Xmas scans (-sX) send a malformed TCP packet and expects a RST response for closed ports. It's referred to as an xmas scan as the flags that it sets (PSH, URG and FIN) give it the appearance of a blinking christmas tree when viewed as a packet capture in Wireshark. Below the text is a screenshot from wireshark showing two packets. The first is the Xmas packet with a blue background and the second is the RST packet with a red background. Below those lines is a deeper inspection of the Xmas packet where you can see a 1 in the lines for the urgent, push, and fin flags."/>
    <br />
   <br />
-  Step Four: <br />
-  <img src="" height="80%" width="80%" alt="image four"/>
+  Like with the UDP scan, the expected response to these packets is the same if the port is either open or filtered. If the port is open or filtered then the port should not send a response according to RFC 793, but if it is closed it will send a RST packet. Although the RFC specifies that open ports should not respond to malformed TCP packets, in practice Microsoft Windows and many Cisco network devices respond with RST packets regardless of whether the port is open, filtered, or closed.
    <br />
   <br />
-  Step Five: <br />
-  <img src="" height="80%" width="80%" alt="image five"/>
+  The purpose of using these scan types is firewall evasion. Many firewalls are configured to drop incoming TCP requests to blocked ports if the packet has the SYN flag set, so these scan types are able to bypass those firewalls. However, most modern IDS solutions have caught up to recognize these scans, so they may not be 100% effective against modern systems, but they are still stealthier options than the main scan types.
+   <br />
+  <br />
+ I finished up the section by answering the questions:<br />
+  <img src="https://github.com/user-attachments/assets/28ee172d-347d-42ef-af92-bb9663dea294" height="80%" width="80%" alt="white background with questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The first question asks Which of the three shown scan types uses the URG flag? The answer is xmas. The second question asks Why are NULL, FIN and Xmas scans generally used? The answer is firewall evasion. The third question asks Which common OS may respond to a NULL, FIN or Xmas scan with a RST for every port? The answer is Microsoft Windows."/>
 </p>
 - <b>Scan Types: ICMP Network Scanning</b>
 <p>Description</p>
