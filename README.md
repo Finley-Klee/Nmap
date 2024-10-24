@@ -121,10 +121,10 @@ Compared to TCP and SYN scans, UDP scans are quite slow, so it is recommended to
   <img src="https://github.com/user-attachments/assets/735f3d97-a0a6-4dc5-90dd-3ac9b5cc450c" height="80%" width="80%" alt="white background with the question in black font and the answer below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The question reads How would you perform a ping sweep on the 172.16.x.x network (Netmask: 255.255.0.0) using Nmap? (CIDR notation) and the answer is nmap -sn 172.16.0.0/16"/>
 </p>
 - <b>NSE Scripts: Overview</b>
-<p>Description</p>
+<p>This section gives a brief introduction to the Nmap Scripting Engine (NSE).</p>
 <br>
-<p align="center">Step One: <br/>
-  <img src="" height="80%" width="80%" alt="image one"/>
+<p align="center">NSE scripts extend the functionality of nmap and can be used to do things such as scan for vulnerabilities, automate exploits, etc. They are written in the Lua programming language, and the script library is quite extensive.<br/>
+  <img src="https://github.com/user-attachments/assets/02189908-c213-46d2-8c14-796fa495d5c6" height="80%" width="80%" alt="white background with black text that reads There are many categories available. Some useful categories include: followed by a bulleted list. Bullet 1 safe:- Won't affect the target, bullet 2 intrusive:- Not safe: likely to affect the target, bullet 3 vuln:- Scan for vulnerabilities, bullet 4 exploit:- Attempt to exploit a vulnerability, bullet 5 auth:- Attempt to bypass authentication for running services (e.g. Log into an FTP server anonymously), bullet 6 brute:- Attempt to bruteforce credentials for running services, bullet 7 discovery:- Attempt to query running services for further information about the network (e.g. query an SNMP server)."/>
   <br />
   <br />
   Step Two: <br />
@@ -231,3 +231,4 @@ Compared to TCP and SYN scans, UDP scans are quite slow, so it is recommended to
   <img src="" height="80%" width="80%" alt="image five"/>
 </p>
 
+<img width="858" alt="Screenshot 2024-10-24 at 10 11 30 PM" src="">
