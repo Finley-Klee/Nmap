@@ -108,26 +108,17 @@ Compared to TCP and SYN scans, UDP scans are quite slow, so it is recommended to
   <img src="https://github.com/user-attachments/assets/28ee172d-347d-42ef-af92-bb9663dea294" height="80%" width="80%" alt="white background with questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The first question asks Which of the three shown scan types uses the URG flag? The answer is xmas. The second question asks Why are NULL, FIN and Xmas scans generally used? The answer is firewall evasion. The third question asks Which common OS may respond to a NULL, FIN or Xmas scan with a RST for every port? The answer is Microsoft Windows."/>
 </p>
 - <b>Scan Types: ICMP Network Scanning</b>
-<p>Description</p>
+<p>The next section describes how to use nmap to perform a "ping sweep" of a target network to map which ip addresses are live.</p>
 <br>
-<p align="center">Step One: <br/>
-  <img src="" height="80%" width="80%" alt="image one"/>
+<p align="center">When you first connect to a target network on a black box assignment you want to determine which hosts in the network are active. To do this, nmap sends an ICMP packet to each possible ip address for the target network. If an ip address responds, it is marked as being alive. While this is not always acurate, it provides a good baseline.
   <br />
   <br />
-  Step Two: <br />
-  <img src="" height="80%" width="80%" alt="image two"/>
+ A ping sweep is run using the -sn switch followed by an IP range written either with a hyphen, or in CIDR notation. Below is an example of two different ways to write the ping sweep command for the same network: <br />
+  <img src="https://github.com/user-attachments/assets/4119ce1f-0bda-43ea-be15-b77727769d4e" height="80%" width="80%" alt="white background with black bullet points and or between them. Each command has a dark blue background with white text. The top command reads nmap -sn 192.168.0.1-254. The bottom command reads nmap -sn 192.168.0.0/24."/>
   <br />
   <br />
-  Step Three: <br />
-  <img src="" height="80%" width="80%" alt="image three"/>
-   <br />
-  <br />
-  Step Four: <br />
-  <img src="" height="80%" width="80%" alt="image four"/>
-   <br />
-  <br />
-  Step Five: <br />
-  <img src="" height="80%" width="80%" alt="image five"/>
+ To answer the section question I generated a command for a ping sweep using CIDR notation:<br />
+  <img src="https://github.com/user-attachments/assets/735f3d97-a0a6-4dc5-90dd-3ac9b5cc450c" height="80%" width="80%" alt="white background with the question in black font and the answer below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The question reads How would you perform a ping sweep on the 172.16.x.x network (Netmask: 255.255.0.0) using Nmap? (CIDR notation) and the answer is nmap -sn 172.16.0.0/16"/>
 </p>
 - <b>NSE Scripts: Overview</b>
 <p>Description</p>
