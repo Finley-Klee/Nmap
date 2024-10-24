@@ -1,7 +1,7 @@
 # Nmap
 
 <h2>Description</h2>
-Nmap is an important enumeration tool and this TryHackMe room is dedicated to learning the basics of port scanning with nmap.
+Nmap is an important enumeration tool and this TryHackMe room (https://tryhackme.com/r/room/furthernmap) is dedicated to learning the basics of port scanning with nmap.
 
 <h2>Utilities Used</h2>
 
