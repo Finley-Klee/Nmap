@@ -60,26 +60,20 @@ Nmap is an important enumeration tool and this TryHackMe room is dedicated to le
   <img src="https://github.com/user-attachments/assets/16063214-f50c-451f-9ac7-81beaf079272" height="80%" width="80%" alt="white background with questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The first questions asks Which RFC defines the appropriate behaviour for the TCP protocol? The answer is RFC 9293. The second question asks If a port is closed, which flag should the server send back to indicate this? The answer is RST."/>
 </p>
 - <b>Scan Types: SYN Scans</b>
-<p>Description</p>
+<p>The next section details SYN scans and how they differ from TCP connect scans, and what the pros and cons of using them are.</p>
 <br>
-<p align="center">Step One: <br/>
-  <img src="" height="80%" width="80%" alt="image one"/>
+<p align="center">Both TCP connect scans and SYN scans use the TCP three-way handshake to gather information about target ports, however the SYN scan does not successfully complete the third part of the handshake. Instead, in the SYN scan, nmap responds to the SYN/ACK packet with a RST (reset) packet. The screenshot below shows a diagram of the process as well as what the packet capture looks like:<br/>
+  <img src="https://github.com/user-attachments/assets/0f59af3d-75ca-4681-bd58-fad2425d4c20" height="80%" width="80%" alt="at the top left of the screenshot is a diagram with diagonal arrows pointing from a client line on the left to and from a server line of the right. The first diagonal line goes from the client to the server with the SYN packet, the middle diagonal line goes from the server to the client with the SYN/ACK packet, and the final diagonal line goes from the client to the server with the RST packet. Below this diagram is a section of a Wireshark packet capture showing a table with the packet number, the time, the source ip address, the destination ip address, the protocol, the length, and the information contained in the packet. There are three rows in the table, the first row shows the SYN packet, the second row shows the SYN/ACK packet, and the third row shows the RST packet which has a red background distinguishing it from the previous packet capture."/>
   <br />
   <br />
-  Step Two: <br />
-  <img src="" height="80%" width="80%" alt="image two"/>
+  Pros of using a SYN scan inlude the ability to bypass older Intrusion Detection Systems, which is why they are often refered to as "stealth" scans. Also, many applications only log completed connections on the port, so a SYN scan can often go unrecorded, which also helps with stealth. And lastly, since the three-way handshake does not have to be completed and then disconnected from, SYN scans are typically faster than TCP connect scans.<br />
   <br />
+  There are a couple of disadvantages to SYN scans including that they require sudo permissions in order to work correctly in Linux, and unstable services could potentially be brought down by SYN scans, which is a problem if a client provides a production environment for their test. <br />
   <br />
-  Step Three: <br />
-  <img src="" height="80%" width="80%" alt="image three"/>
-   <br />
+According to TryHackMe, all in all the pros of the SYN scan outweigh the cons, and for that reason nmap will default to running a SYN scan if it has sudo permissions, and will default to running a TCP scan if it lacks sudo permissions.<br />
   <br />
-  Step Four: <br />
-  <img src="" height="80%" width="80%" alt="image four"/>
-   <br />
-  <br />
-  Step Five: <br />
-  <img src="" height="80%" width="80%" alt="image five"/>
+I finished up the section by answering the questions about SYN scans:<br />
+  <img src="https://github.com/user-attachments/assets/4b9dd5af-07f1-4dd2-832a-12fb9286f39d" height="80%" width="80%" alt="white background with questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The first questions asks There are two other names for a SYN scan, what are they? The answer is Half-Open, Stealth. The second question asks Can Nmap use a SYN scan without Sudo permissions (Y/N)? The answer is N."/>
 </p>
 - <b>Scan Types: UDP Scans</b>
 <p>Description</p>
@@ -258,3 +252,4 @@ Nmap is an important enumeration tool and this TryHackMe room is dedicated to le
   <img src="" height="80%" width="80%" alt="image five"/>
 </p>
 
+<img width="1270" alt="Screenshot 2024-10-24 at 8 08 31 PM" src="">
