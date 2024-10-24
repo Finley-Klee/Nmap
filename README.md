@@ -76,26 +76,14 @@ I finished up the section by answering the questions about SYN scans:<br />
   <img src="https://github.com/user-attachments/assets/4b9dd5af-07f1-4dd2-832a-12fb9286f39d" height="80%" width="80%" alt="white background with questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The first questions asks There are two other names for a SYN scan, what are they? The answer is Half-Open, Stealth. The second question asks Can Nmap use a SYN scan without Sudo permissions (Y/N)? The answer is N."/>
 </p>
 - <b>Scan Types: UDP Scans</b>
-<p>Description</p>
+<p>The UDP section explains how nmap is able to scan UDP ports.</p>
 <br>
-<p align="center">Step One: <br/>
-  <img src="" height="80%" width="80%" alt="image one"/>
+<p align="center">UDP protocol is used in situations where speed is more important than quality, such as for video calls. As such, UDP is a stateless protocol, meaning that UDP packets are simply sent to an open port and are unacknowledged. This makes determining whether a UDP port is open, filtered, or closed more difficult. When nmap runs a UDP scan it sends a packet and if it receives no response two times, it will mark the ports as open | filtered because it may or may not be behind a firewall and the behavior would remain the same. In the rare case that nmap receives a response, it can mark the port as open. Nmap can identify closed UDP ports because they respond with an ICMP (ping) packet containing a message that the port is unreachable.<br/>
   <br />
+Compared to TCP and SYN scans, UDP scans are quite slow, so it is recommended to limit the scan to the top ports only.<br />
   <br />
-  Step Two: <br />
-  <img src="" height="80%" width="80%" alt="image two"/>
-  <br />
-  <br />
-  Step Three: <br />
-  <img src="" height="80%" width="80%" alt="image three"/>
-   <br />
-  <br />
-  Step Four: <br />
-  <img src="" height="80%" width="80%" alt="image four"/>
-   <br />
-  <br />
-  Step Five: <br />
-  <img src="" height="80%" width="80%" alt="image five"/>
+ After reading about UDP scans, I answered the questions for this section:<br />
+  <img src="https://github.com/user-attachments/assets/f494e035-823a-4689-ac33-e938c83db1bc" height="80%" width="80%" alt="white background with questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The first questions asks If a UDP port doesn't respond to an Nmap scan, what will it be marked as? The answer is open|filtered. The second question asks When a UDP port is closed, by convention the target should send back a port unreachable message. Which protocol would it use to do so? The answer is ICMP."/>
 </p>
 - <b>Scan Types: NULL, FIN and XMAS</b>
 <p>Description</p>
