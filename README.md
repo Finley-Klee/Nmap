@@ -38,48 +38,26 @@ Nmap is an important enumeration tool and this TryHackMe room is dedicated to le
   <img src="https://github.com/user-attachments/assets/32069e7d-6cb4-4c0d-8922-152fd66e3dcc" height="80%" width="80%" alt="white background with questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. Q: A very useful option that should not be ignored: How would you tell nmap to scan all ports? A: -p- Q: How would you activate a script from the nmap scripting library (lots more on this later!)? A: --script Q: How would you activate all of the scripts in the vuln category? A: --script=vuln"/>
 </p>
 - <b>Scan Types: Overview</b>
-<p>Description</p>
+<p>In this section I was introduced to the six different types of scans that nmap can run.</p>
 <br>
-<p align="center">Step One: <br/>
-  <img src="" height="80%" width="80%" alt="image one"/>
+<p align="center">The three basic scans are TCP, SYN, and UDP. In the screenshot below you can see the nmap flag for each scan type. <br/>
+  <img src="https://github.com/user-attachments/assets/9ec09dd0-041e-4afe-9066-5da564d7951e" height="80%" width="80%" alt="white background with black bullet points and black text. In parantheses the command flags are shown on a dark blue background with white text. The bullet points read TCP connect scans -sT, SYN half open scans -sS, and UDP scans -sU."/>
   <br />
   <br />
-  Step Two: <br />
-  <img src="" height="80%" width="80%" alt="image two"/>
-  <br />
-  <br />
-  Step Three: <br />
-  <img src="" height="80%" width="80%" alt="image three"/>
-   <br />
-  <br />
-  Step Four: <br />
-  <img src="" height="80%" width="80%" alt="image four"/>
-   <br />
-  <br />
-  Step Five: <br />
-  <img src="" height="80%" width="80%" alt="image five"/>
+ There are also three less common scans. These are the TCP Null scan, the TCP FIN scan, and the TCP Xmas scan. In the screenshot below you can see the nmap flag for each scan type. <br />
+  <img src="https://github.com/user-attachments/assets/e057f978-646f-483c-b0bc-378a5d196f87" height="80%" width="80%" alt="white background with black bullet points and black text. In parantheses the command flags are shown on a dark blue background with white text. The bullet points read TCP Null scans -sN, TCP FIN scans -sF, and TCP Xmas scans -sX."/>
 </p>
 - <b>Scan Types: TCP Connect Scans</b>
-<p>Description</p>
+<p>This section goes into greater detail about the inner workings of the first scan type: TCP connect scans.</p>
 <br>
-<p align="center">Step One: <br/>
-  <img src="" height="80%" width="80%" alt="image one"/>
+<p align="center">The TCP connect scan works by performing the three-way handshake with each target port in turn. Depending on the response nmap receives, it determines whether the port is open, filtered, or closed. In the screenshot below you can see a diagram of the three-way handshake process and a section of a packet capture showing what the handshake looks like when intercepted by Wireshark. <br/>
+  <img src="https://github.com/user-attachments/assets/214f3504-2af8-40c5-ae46-a54af26cad5b" height="80%" width="80%" alt="at the top left of the screenshot is a diagram with diagonal arrows pointing from a client line on the left to and from a server line of the right. The first diagonal line goes from the client to the server with the SYN packet, the middle diagonal line goes from the server to the client with the SYN/ACK packet, and the final diagonal line goes from the client to the server with the ACK packet. Below this diagram is a section of a Wireshark packet capture showing a table with the packet number, the time, the source ip address, the destination ip address, the protocol, the length, and the information contained in the packet. There are three rows in the table, the first row shows the SYN packet, the second row shows the SYN/ACK packet, and the third row shows the ACK packet."/>
   <br />
   <br />
-  Step Two: <br />
-  <img src="" height="80%" width="80%" alt="image two"/>
+  There are three possible responses nmap can get from the target port based on if it is open, closed, or filtered by a firewall. If the port is open, when nmap sends the SYN request it will receive the SYN/ACK back. If the port is closed, the port will respond to the SYN with RST (reset), however if the port is filtered by a firewall, most are configured to drop incoming packets, so nmap won't receive a response. The firewall can, however, be configured to respond to the SYN packet with a RST TCP packet, so it is not always clear whether the port is closed or filtered. <br />
   <br />
-  <br />
-  Step Three: <br />
-  <img src="" height="80%" width="80%" alt="image three"/>
-   <br />
-  <br />
-  Step Four: <br />
-  <img src="" height="80%" width="80%" alt="image four"/>
-   <br />
-  <br />
-  Step Five: <br />
-  <img src="" height="80%" width="80%" alt="image five"/>
+ After reading about TCP connect scans, I answered the questions at the end of the section: <br />
+  <img src="https://github.com/user-attachments/assets/16063214-f50c-451f-9ac7-81beaf079272" height="80%" width="80%" alt="white background with questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The first questions asks Which RFC defines the appropriate behaviour for the TCP protocol? The answer is RFC 9293. The second question asks If a port is closed, which flag should the server send back to indicate this? The answer is RST."/>
 </p>
 - <b>Scan Types: SYN Scans</b>
 <p>Description</p>
@@ -279,3 +257,5 @@ Nmap is an important enumeration tool and this TryHackMe room is dedicated to le
   Step Five: <br />
   <img src="" height="80%" width="80%" alt="image five"/>
 </p>
+
+<img width="1267" alt="Screenshot 2024-10-24 at 7 32 39 PM" src="">
