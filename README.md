@@ -258,4 +258,3 @@ Nmap is an important enumeration tool and this TryHackMe room is dedicated to le
   <img src="" height="80%" width="80%" alt="image five"/>
 </p>
 
-<img width="1267" alt="Screenshot 2024-10-24 at 7 32 39 PM" src="">
