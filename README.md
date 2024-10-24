@@ -114,7 +114,7 @@ Compared to TCP and SYN scans, UDP scans are quite slow, so it is recommended to
   <br />
   <br />
  A ping sweep is run using the -sn switch followed by an IP range written either with a hyphen, or in CIDR notation. Below is an example of two different ways to write the ping sweep command for the same network: <br />
-  <img src="https://github.com/user-attachments/assets/4119ce1f-0bda-43ea-be15-b77727769d4e" height="80%" width="80%" alt="white background with black bullet points and or between them. Each command has a dark blue background with white text. The top command reads nmap -sn 192.168.0.1-254. The bottom command reads nmap -sn 192.168.0.0/24."/>
+  <img src="https://github.com/user-attachments/assets/4119ce1f-0bda-43ea-be15-b77727769d4e" height="50%" width="50%" alt="white background with black bullet points and or between them. Each command has a dark blue background with white text. The top command reads nmap -sn 192.168.0.1-254. The bottom command reads nmap -sn 192.168.0.0/24."/>
   <br />
   <br />
  To answer the section question I generated a command for a ping sweep using CIDR notation:<br />
@@ -127,42 +127,22 @@ Compared to TCP and SYN scans, UDP scans are quite slow, so it is recommended to
   <img src="https://github.com/user-attachments/assets/02189908-c213-46d2-8c14-796fa495d5c6" height="80%" width="80%" alt="white background with black text that reads There are many categories available. Some useful categories include: followed by a bulleted list. Bullet 1 safe:- Won't affect the target, bullet 2 intrusive:- Not safe: likely to affect the target, bullet 3 vuln:- Scan for vulnerabilities, bullet 4 exploit:- Attempt to exploit a vulnerability, bullet 5 auth:- Attempt to bypass authentication for running services (e.g. Log into an FTP server anonymously), bullet 6 brute:- Attempt to bruteforce credentials for running services, bullet 7 discovery:- Attempt to query running services for further information about the network (e.g. query an SNMP server)."/>
   <br />
   <br />
-  Step Two: <br />
-  <img src="" height="80%" width="80%" alt="image two"/>
-  <br />
-  <br />
-  Step Three: <br />
-  <img src="" height="80%" width="80%" alt="image three"/>
-   <br />
-  <br />
-  Step Four: <br />
-  <img src="" height="80%" width="80%" alt="image four"/>
-   <br />
-  <br />
-  Step Five: <br />
-  <img src="" height="80%" width="80%" alt="image five"/>
+  <img src="https://github.com/user-attachments/assets/653fb284-908e-4167-8400-183afae3aac1" height="80%" width="80%" alt="white background with the questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The first question reads What language are NSE scripts written in? and the answer is Lua. The second question reads Which category of scripts would be a very bad idea to run in a production environment? and the answer is intrusive."/>
 </p>
 - <b>NSE Scripts: Working with the NSE</b>
-<p>Description</p>
+<p>In this next section I learned how to run NSE scripts using the --script switch for nmap.</p>
 <br>
-<p align="center">Step One: <br/>
-  <img src="" height="80%" width="80%" alt="image one"/>
+<p align="center">All of the applicable scripts form a category can be run using the --script=[category name] switch. For example, in the nmap switches section I wrote out the switch to run all of the scripts in the "vuln" category, which is --script=vuln. We could also do this with all of the scripts in the "safe" category by writing --script=safe.
   <br />
   <br />
-  Step Two: <br />
-  <img src="" height="80%" width="80%" alt="image two"/>
+ To run a specific script we use the --script switch with the file name like this: --script=http-fileupload-exploiter. You can also run multiple scripts separated by commas. For example: --script=smb-enum-users,smb-enum-shares.
   <br />
   <br />
-  Step Three: <br />
-  <img src="" height="80%" width="80%" alt="image three"/>
+  For scripts that require arguments you use the --script-args switch, like this: --script http-put --script-args http-put.url='/dav/shell.php',http-put.file='./shell.php'
    <br />
   <br />
-  Step Four: <br />
-  <img src="" height="80%" width="80%" alt="image four"/>
-   <br />
-  <br />
-  Step Five: <br />
-  <img src="" height="80%" width="80%" alt="image five"/>
+ To answer the question about scripts I used the help page for the ftp-anon.nse script:<br />
+  <img src="https://github.com/user-attachments/assets/363ee448-eb4c-4eb8-be4a-56223c271c1b" height="80%" width="80%" alt="white background with the question in black font and the answer below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The question reads What optional argument can the ftp-anon.nse script take? and the answer is maxlist."/>
 </p>
 - <b>NSE Scripts: Searching for Scripts</b>
 <p>Description</p>
@@ -231,4 +211,3 @@ Compared to TCP and SYN scans, UDP scans are quite slow, so it is recommended to
   <img src="" height="80%" width="80%" alt="image five"/>
 </p>
 
-<img width="858" alt="Screenshot 2024-10-24 at 10 11 30 PM" src="">
