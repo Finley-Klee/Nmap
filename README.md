@@ -169,25 +169,3 @@ Another way to search is by using wildcard asterisks on either side of the searc
 <p align="center">After reading about these different options for firewall evasion, I answered two questions about nmap switches for firewall evasion.<br/>
   <img src="https://github.com/user-attachments/assets/8c10523e-c06c-4634-b192-97381c586e05" height="80%" width="80%" alt="white background with the questions in black font and the answers below in gray rounded rectangles with lime green rectangles to the right which read checkmark correct answer. The first question reads which simple (and frequently relied upon) protocol is often blocked, requiring the use of the -Pn switch? The first answer reads ICMP. The second question reads research Which Nmap switch allows you to append an arbitrary length of random data to the end of packets? The second answer reads --data-length."/>
 </p>
-- <b>Practical</b>
-<p>Description</p>
-<br>
-<p align="center">Step One: <br/>
-  <img src="" height="80%" width="80%" alt="image one"/>
-  <br />
-  <br />
-  Step Two: <br />
-  <img src="" height="80%" width="80%" alt="image two"/>
-  <br />
-  <br />
-  Step Three: <br />
-  <img src="" height="80%" width="80%" alt="image three"/>
-   <br />
-  <br />
-  Step Four: <br />
-  <img src="" height="80%" width="80%" alt="image four"/>
-   <br />
-  <br />
-  Step Five: <br />
-  <img src="" height="80%" width="80%" alt="image five"/>
-</p>
