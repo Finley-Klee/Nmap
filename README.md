@@ -164,26 +164,10 @@ Another way to search is by using wildcard asterisks on either side of the searc
   <img src="https://github.com/user-attachments/assets/27ff1841-0608-4d9f-a2f8-9ae7bd52f5ef" height="80%" width="80%" alt="white background with the questions in black font and the answers below in a gray rounded rectangle with a lime green rectangle to the right which reads checkmark correct answer. The first question reads Search for smb scripts in the /usr/share/nmap/scripts/ directory using either of the demonstrated methods. What is the filename of the script which determines the underlying OS of the SMB server? and the answer is smb-os-discovery.nse. The second question reads Read through this script. What does it depend on? and the answer is smb-brute."/>
 </p>
 - <b>Firewall Evasion</b>
-<p>Description</p>
+<p>The default firewall on a typical Windows host will block all ICMP packets, so a ping sent by nmap to determine whether a host is live or not will get blocked, resulting in nmap assuming the host is dead and not bothering to scan it. To bypass this configuration we can use the -Pn flag, which tells nmap not to bother pinging the host before scanning it. In other words, nmap will always treat the host like it is alive. There are other flags which are also useful for firewall evasion such as -f which is used to fragment packets, making it less likely they will be detected by firewalls or IDS, --mtu followed by a multiple of 8, which is an alternative to the -f flag and specifies the maximum transmission unit size to use for the packets sent, --scan-delay followed by a time in ms to evade time-based firewall or IDS triggers, and --badsum which is used to generate an invalid checksum for packets, to which some firewalls or IDS may respond automatically rather than drop the packet which can be used to detect the presence of a firewall or IDS.</p>
 <br>
-<p align="center">Step One: <br/>
-  <img src="" height="80%" width="80%" alt="image one"/>
-  <br />
-  <br />
-  Step Two: <br />
-  <img src="" height="80%" width="80%" alt="image two"/>
-  <br />
-  <br />
-  Step Three: <br />
-  <img src="" height="80%" width="80%" alt="image three"/>
-   <br />
-  <br />
-  Step Four: <br />
-  <img src="" height="80%" width="80%" alt="image four"/>
-   <br />
-  <br />
-  Step Five: <br />
-  <img src="" height="80%" width="80%" alt="image five"/>
+<p align="center">After reading about these different options for firewall evasion, I answered two questions about nmap switches for firewall evasion.<br/>
+  <img src="https://github.com/user-attachments/assets/8c10523e-c06c-4634-b192-97381c586e05" height="80%" width="80%" alt="white background with the questions in black font and the answers below in gray rounded rectangles with lime green rectangles to the right which read checkmark correct answer. The first question reads which simple (and frequently relied upon) protocol is often blocked, requiring the use of the -Pn switch? The first answer reads ICMP. The second question reads research Which Nmap switch allows you to append an arbitrary length of random data to the end of packets? The second answer reads --data-length."/>
 </p>
 - <b>Practical</b>
 <p>Description</p>
@@ -207,4 +191,3 @@ Another way to search is by using wildcard asterisks on either side of the searc
   Step Five: <br />
   <img src="" height="80%" width="80%" alt="image five"/>
 </p>
-
