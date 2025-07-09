@@ -41,11 +41,11 @@ Nmap is an important enumeration tool and this TryHackMe room (https://tryhackme
 <p>In this section I was introduced to the six different types of scans that nmap can run.</p>
 <br>
 <p align="center">The three basic scans are TCP, SYN, and UDP. In the screenshot below you can see the nmap flag for each scan type. <br/>
-  <img src="https://github.com/user-attachments/assets/9ec09dd0-041e-4afe-9066-5da564d7951e" height="60%" width="60%" alt="white background with black bullet points and black text. In parantheses the command flags are shown on a dark blue background with white text. The bullet points read TCP connect scans -sT, SYN half open scans -sS, and UDP scans -sU."/>
+  <img src="https://github.com/user-attachments/assets/9ec09dd0-041e-4afe-9066-5da564d7951e" width="60%" alt="white background with black bullet points and black text. In parantheses the command flags are shown on a dark blue background with white text. The bullet points read TCP connect scans -sT, SYN half open scans -sS, and UDP scans -sU."/>
   <br />
   <br />
  There are also three less common scans. These are the TCP Null scan, the TCP FIN scan, and the TCP Xmas scan. In the screenshot below you can see the nmap flag for each scan type. <br />
-  <img src="https://github.com/user-attachments/assets/e057f978-646f-483c-b0bc-378a5d196f87" height="60%" width="60%" alt="white background with black bullet points and black text. In parantheses the command flags are shown on a dark blue background with white text. The bullet points read TCP Null scans -sN, TCP FIN scans -sF, and TCP Xmas scans -sX."/>
+  <img src="https://github.com/user-attachments/assets/e057f978-646f-483c-b0bc-378a5d196f87" width="60%" alt="white background with black bullet points and black text. In parantheses the command flags are shown on a dark blue background with white text. The bullet points read TCP Null scans -sN, TCP FIN scans -sF, and TCP Xmas scans -sX."/>
 </p>
 - <b>Scan Types: TCP Connect Scans</b>
 <p>This section goes into greater detail about the inner workings of the first scan type: TCP connect scans.</p>
